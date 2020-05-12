@@ -18,6 +18,10 @@ socket.on('lastTicket', function(data) {
     updateHTML(data.lastFour);
 });
 
+socket.on('latestFour', function(data) {
+    updateHTML(data.lastFour);
+});
+
 function updateHTML(lastFour) {
     for (var i = 0; i <= lastFour.length - 1; i++) {
         lblTickets[i].text('Ticket ' + lastFour[i].folio);

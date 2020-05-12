@@ -28,5 +28,10 @@ io.on('connection', (client) => {
         let takeTicket = ticketControl.attend(data.desktop);
 
         callback(takeTicket);
+
+        // Last Four
+        client.broadcast.emit('latestFour', {
+            lastFour: ticketControl.latestFour()
+        });
     });
 });
