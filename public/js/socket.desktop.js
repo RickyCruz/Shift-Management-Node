@@ -22,13 +22,3 @@ $('button').on('click', function() {
         label.text('Ticket ' + response.folio);
     });
 });
-
-// socket.on('lastTicket', function(ticket) {
-//     label.text(ticket.last);
-// });
-
-// $('button').on('click', function() {
-//     socket.emit('nextTicket', null, function(next) {
-//         label.text(next);
-//     });
-// });

@@ -13,7 +13,8 @@ io.on('connection', (client) => {
     });
 
     client.emit('lastTicket', {
-        last : ticketControl.latest()
+        last : ticketControl.latest(),
+        lastFour: ticketControl.latestFour()
     });
 
     client.on('takeTicket', (data, callback) => {
