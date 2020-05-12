@@ -19,6 +19,9 @@ socket.on('lastTicket', function(data) {
 });
 
 socket.on('latestFour', function(data) {
+    var audio = new Audio('audio/new-ticket.mp3');
+    audio.play();
+
     updateHTML(data.lastFour);
 });
 
