@@ -11,4 +11,8 @@ io.on('connection', (client) => {
         console.log(nextTicket);
         callback(nextTicket);
     });
+
+    client.emit('lastTicket', {
+        last : ticketControl.latest()
+    });
 });

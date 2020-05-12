@@ -30,6 +30,10 @@ class TicketControl {
         return `Ticket ${ this.last }`;
     }
 
+    latest() {
+        return `Ticket ${ this.last }`;
+    }
+
     saveData() {
         let jsonData = {
             "last": this.last,
