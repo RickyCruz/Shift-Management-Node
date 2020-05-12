@@ -15,4 +15,17 @@ io.on('connection', (client) => {
     client.emit('lastTicket', {
         last : ticketControl.latest()
     });
+
+    client.on('takeTicket', (data, callback) => {
+        if (! data.desktop) {
+            return callback({
+                error: true,
+                message: 'The desktop is required'
+            });
+        }
+
+        let takeTicket = ticketControl.attend(data.desktop);
+
+        callback(takeTicket);
+    });
 });
